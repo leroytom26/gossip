@@ -1,0 +1,158 @@
+**Software Requirements Specification (SRS)**
+
+**Project Name**: Gossip with Brother Elkana
+
+**Version**: 1.0
+
+**Prepared By**: [Your Name]
+
+**Date**: [Insert Date]
+
+---
+
+### 1. Introduction
+
+#### 1.1 Purpose
+This document defines the software requirements for the "Gossip with Brother Elkana" platform. The system will support Twitter Spaces-based discussions, participant rewards, and partnerships with businesses to foster meaningful conversations around relationships, mental wellness, family, and faith-centered values.
+
+#### 1.2 Scope
+"Gossip with Brother Elkana" is a platform designed to:
+- Host and manage Twitter Spaces sessions.
+- Reward participants with tangible benefits like airtime or transport vouchers.
+- Facilitate partnerships with businesses to support rewards ethically.
+- Provide an admin dashboard for session and partnership management.
+
+The system backend will use Python (FastAPI) deployed on Render.com, and the frontend will use Next.js deployed on Vercel. Supabase will manage the database.
+
+#### 1.3 Definitions, Acronyms, and Abbreviations
+- **Twitter Spaces**: Audio-based discussion feature on Twitter.
+- **Supabase**: A backend-as-a-service platform built on PostgreSQL.
+- **MVP**: Minimum Viable Product.
+- **OAuth 2.0**: Authentication protocol for secure user login.
+
+#### 1.4 References
+- Supabase Documentation: [https://supabase.com/docs](https://supabase.com/docs)
+- FastAPI Documentation: [https://fastapi.tiangolo.com](https://fastapi.tiangolo.com)
+- Next.js Documentation: [https://nextjs.org/docs](https://nextjs.org/docs)
+
+---
+
+### 2. Overall Description
+
+#### 2.1 Product Perspective
+The system integrates Twitter API for user authentication and Space management. Users will earn rewards for participation, which can be redeemed through partnerships with local businesses. Admins will manage sessions, rewards, and partnerships through an intuitive dashboard.
+
+#### 2.2 Product Features
+1. **User Authentication**:
+   - Secure login via Twitter (OAuth 2.0).
+
+2. **Session Management**:
+   - Schedule, manage, and track Twitter Spaces.
+   - Track participant attendance.
+
+3. **Reward System**:
+   - Assign reward points for participation.
+   - Facilitate reward redemption (e.g., airtime, vouchers).
+
+4. **Partner Integration**:
+   - Allow businesses to support sessions with tangible rewards.
+   - Display partnership details to participants.
+
+5. **Admin Dashboard**:
+   - Manage users, sessions, rewards, and partnerships.
+   - View analytics and generate reports.
+
+6. **Feedback Mechanism**:
+   - Collect feedback on sessions from participants.
+
+#### 2.3 User Classes and Characteristics
+- **Participants**: General users who join sessions and earn rewards.
+- **Admins**: Manage sessions, rewards, and partnerships.
+- **Partners**: Businesses providing sponsorship or rewards.
+
+#### 2.4 Operating Environment
+- **Backend**: Python with FastAPI, deployed on Render.com.
+- **Frontend**: Next.js(App Router)+React+Tailwind CSS+Typescript, deployed on Vercel.
+- **Database**: Supabase (PostgreSQL).
+- **Browsers**: Modern browsers (Chrome, Edge, Safari, Firefox).
+
+#### 2.5 Constraints
+- Must use free-tier deployment services.
+- Limited scalability in the MVP phase due to free-tier restrictions.
+
+#### 2.6 Assumptions and Dependencies
+- Reliable internet access is available for participants.
+- Twitter API is functional for OAuth and Spaces integration.
+- Partners will provide rewards in-kind (no direct cash donations).
+
+---
+
+### 3. Specific Requirements
+
+#### 3.1 Functional Requirements
+##### 3.1.1 User Authentication
+- Users must log in via Twitter OAuth.
+- System must store user profiles securely in the database.
+
+##### 3.1.2 Session Management
+- Admins can create, update, and delete sessions.
+- Participants can view and join sessions.
+- Track session attendance and participation duration.
+
+##### 3.1.3 Reward System
+- Assign points to participants based on session attendance.
+- Allow users to redeem points for rewards.
+- Notify users upon successful reward redemption.
+
+##### 3.1.4 Admin Dashboard
+- Provide analytics on session attendance and reward distribution.
+- Manage users, sessions, and partnerships.
+- Generate reports on user engagement and partner contributions.
+
+##### 3.1.5 Partner Integration
+- Allow partners to sponsor specific sessions or general rewards.
+- Track partner contributions and generate acknowledgment reports.
+
+##### 3.1.6 Feedback Mechanism
+- Collect feedback via a form linked to each session.
+- Display average ratings and key feedback highlights to admins.
+
+#### 3.2 Non-Functional Requirements
+- **Performance**: The system should handle up to 500 concurrent users in the MVP phase.
+- **Security**: Implement HTTPS for secure data transmission.
+- **Usability**: The frontend must be mobile-friendly and accessible.
+- **Scalability**: The system should allow for easy upgrades to paid hosting plans.
+- **Availability**: Ensure 99% uptime for backend and frontend services.
+
+#### 3.3 External Interface Requirements
+- **Twitter API**: For user authentication and Space management.
+- **Partner APIs**: Optional, for integrating reward redemption (e.g., telecom APIs).
+
+#### 3.4 Database Requirements
+- Supabase PostgreSQL database with tables:
+  - `users`, `sessions`, `participants`, `rewards`, `partners`, `partnerships`, `feedback`.
+- Enforce data integrity with foreign key constraints.
+
+---
+
+### 4. Appendices
+
+#### 4.1 Glossary
+- **Session**: A scheduled discussion hosted on Twitter Spaces.
+- **Reward**: Incentives like airtime or vouchers earned by participants.
+- **Partner**: A business providing rewards or sponsorships.
+
+#### 4.2 Revision History
+| Version | Date       | Description               |
+|---------|------------|---------------------------|
+| 1.0     | [Insert Date] | Initial version of the SRS |
+
+#### 4.3 References
+- Supabase: [https://supabase.com](https://supabase.com)
+- Render: [https://render.com](https://render.com)
+- Vercel: [https://vercel.com](https://vercel.com)
+
+---
+
+This SRS serves as the foundation for developing the "Gossip with Brother Elkana" platform. Revisions and updates can be made as the project evolves.
+
